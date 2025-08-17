@@ -41,12 +41,19 @@ All colors MUST be HSL.
     /* Portfolio specific tokens */
     --neon: 197 100% 50%;
     --neon-glow: 197 100% 50%;
+    --glass: 240 10% 8% / 0.3;
     --gradient-primary: linear-gradient(135deg, hsl(263 70% 65%), hsl(197 100% 50%));
     --gradient-dark: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 8% 6%));
     --gradient-card: linear-gradient(145deg, hsl(240 6% 8%), hsl(240 8% 12%));
+    --gradient-glass: linear-gradient(145deg, hsl(240 10% 8% / 0.4), hsl(240 8% 12% / 0.2));
+    --gradient-mesh: radial-gradient(circle at 20% 80%, hsl(263 70% 65% / 0.3) 0%, transparent 50%), 
+                     radial-gradient(circle at 80% 20%, hsl(197 100% 50% / 0.3) 0%, transparent 50%),
+                     radial-gradient(circle at 40% 40%, hsl(280 100% 70% / 0.2) 0%, transparent 50%);
     --shadow-neon: 0 0 30px hsl(197 100% 50% / 0.3);
     --shadow-elegant: 0 20px 40px hsl(240 10% 3.9% / 0.8);
+    --shadow-glass: 0 8px 32px hsl(240 10% 3.9% / 0.6);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -124,6 +131,16 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .gradient-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+  
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+  
   .shadow-neon {
     box-shadow: var(--shadow-neon);
   }
@@ -132,8 +149,16 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-elegant);
   }
   
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
   }
   
   .text-neon {
@@ -142,6 +167,28 @@ All colors MUST be HSL.
   
   .glow-hover:hover {
     box-shadow: var(--shadow-neon);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+  }
+  
+  .interactive-card {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+  
+  .interactive-card:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+  }
+  
+  .magnetic-hover {
+    transition: transform 0.2s ease;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(197 100% 50% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(197 100% 50% / 0.6); }
   }
 }

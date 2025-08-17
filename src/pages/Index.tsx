@@ -4,16 +4,20 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <Skills />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen relative">
+      <InteractiveBackground />
+      <div className="relative z-10">
+        <Hero />
+        <Skills />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
