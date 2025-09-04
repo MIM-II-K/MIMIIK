@@ -6,7 +6,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@mimiik.dev", label: "Email" }
+    { icon: Mail, href: "mailto:ennzaen@gmail.com", label: "Email" }
   ];
 
   return (
@@ -16,12 +16,10 @@ const Footer = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent mb-2">
-              MIMIIK
+              MIM II K
             </h3>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} MIMIIK. Built with{" "}
-              <Heart className="inline h-4 w-4 text-red-500" />{" "}
-              using React & Vite
+              © {currentYear} MIM II K. All rights reserved.
             </p>
           </div>
           

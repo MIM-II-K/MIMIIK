@@ -27,11 +27,10 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
   if (!project) return null;
 
-  const mockImages = [
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=600&fit=crop"
-  ];
+  const images =
+    project.images && project.images.length > 0
+      ? project.images
+      : ["https://via.placeholder.com/800x600?text=No+Preview+Available"];
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -57,29 +56,37 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           <div className="space-y-4">
             <div className="relative group">
               <div className="aspect-video bg-secondary rounded-lg overflow-hidden shadow-elegant">
-                <img 
-                  src={mockImages[currentImageIndex]} 
+                <img
+                  src={images[currentImageIndex]}
                   alt={`${project.title} preview`}
                   className="w-full h-full object-cover transition-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Button variant="secondary" size="lg" className="glow-hover">
-                    <Play className="mr-2 h-5 w-5" />
-                    Live Demo
-                  </Button>
-                </div>
+                {/* Overlay Play Button */}
+                {project.demoUrl && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Button
+                      variant="secondary"
+                      size="lg"
+                      className="glow-hover"
+                      onClick={() => window.open(project.demoUrl, "_blank")}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Live Demo
+                    </Button>
+                  </div>
+                )}
               </div>
-              
+
               {/* Image Navigation */}
               <div className="flex justify-center gap-2 mt-4">
-                {mockImages.map((_, index) => (
+                {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentImageIndex 
-                        ? 'bg-neon shadow-neon' 
-                        : 'bg-muted hover:bg-muted-foreground'
+                      index === currentImageIndex
+                        ? "bg-neon shadow-neon"
+                        : "bg-muted hover:bg-muted-foreground"
                     }`}
                   />
                 ))}
@@ -88,14 +95,26 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button variant="default" className="flex-1 glow-hover">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </Button>
-              <Button variant="outline" className="flex-1 glow-hover">
-                <Github className="mr-2 h-4 w-4" />
-                Source Code
-              </Button>
+              {project.demoUrl && (
+                <Button
+                  variant="default"
+                  className="flex-1 glow-hover"
+                  onClick={() => window.open(project.demoUrl, "_blank")}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Live Demo
+                </Button>
+              )}
+              {project.githubUrl && (
+                <Button
+                  variant="outline"
+                  className="flex-1 glow-hover"
+                  onClick={() => window.open(project.githubUrl, "_blank")}
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  Source Code
+                </Button>
+              )}
             </div>
           </div>
 
@@ -106,9 +125,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <Badge variant="secondary" className="text-neon border-neon/50">
                 {project.status}
               </Badge>
-              <Badge variant="outline">
-                {project.category}
-              </Badge>
+              <Badge variant="outline">{project.category}</Badge>
             </div>
 
             {/* Tech Stack */}
@@ -116,8 +133,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <h4 className="font-semibold mb-3">Technologies Used</h4>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
-                  <Badge 
-                    key={tech} 
+                  <Badge
+                    key={tech}
                     variant="secondary"
                     className="transition-all hover:bg-primary hover:text-primary-foreground hover:scale-105"
                   >
@@ -136,7 +153,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   "Real-time data synchronization",
                   "Advanced security implementation",
                   "Optimized performance and loading",
-                  "Comprehensive testing coverage"
+                  "Comprehensive testing coverage",
                 ]).map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-neon rounded-full mt-2 flex-shrink-0 animate-pulse" />
@@ -150,7 +167,9 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             <div className="grid grid-cols-2 gap-4">
               <div className="gradient-card p-4 rounded-lg border border-border">
                 <div className="text-2xl font-bold text-neon">98%</div>
-                <div className="text-sm text-muted-foreground">Performance Score</div>
+                <div className="text-sm text-muted-foreground">
+                  Performance Score
+                </div>
               </div>
               <div className="gradient-card p-4 rounded-lg border border-border">
                 <div className="text-2xl font-bold text-neon">5.0</div>
