@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+MIMIIK | Full-Stack Developer & ML Engineer Portfolio
 
-## Project info
+Professional Portfolio showcasing expertise in modern web development, machine learning integration, and scalable full-stack solutions. Designed for recruiters, collaborators, and clients to explore skills, projects, and contact seamlessly.
 
-**URL**: https://lovable.dev/projects/da95f563-f17f-49fa-8ca4-47c6e13c4a30
+💼 Professional Summary
 
-## How can I edit this code?
+I am a Full-Stack Developer & Machine Learning Engineer with a passion for building high-quality, scalable web applications and innovative solutions. This portfolio demonstrates:
 
-There are several ways of editing your application.
+Full-stack development expertise (React, Vite, FastAPI, Django, Node.js)
 
-**Use Lovable**
+Modern UI/UX design with dark-mode, responsive layouts, and animations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/da95f563-f17f-49fa-8ca4-47c6e13c4a30) and start prompting.
+End-to-end project lifecycle management: development, deployment, and maintenance
 
-Changes made via Lovable will be committed automatically to this repo.
+Integration of machine learning and automation into real-world applications
 
-**Use your preferred IDE**
+🚀 Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Interactive Hero Section: Mouse-tracking animations, tech stack carousel, gradient highlights
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Projects Showcase: Detailed project cards with live demos, source code links, and descriptions
 
-Follow these steps:
+Professional Contact Form: EmailJS integration with anti-bot protection and modern design
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Resume Download: Instant access to PDF resume for recruiters
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Dark-Themed UI: Professional, minimalistic, and modern aesthetic
 
-# Step 3: Install the necessary dependencies.
-npm i
+Social Integration: GitHub, LinkedIn, and Email links with hover effects and animations
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Responsive Design: Optimized for mobile, tablet, and desktop screens
+
+Dynamic Tech Stack Display: Auto-cycling highlight of core technologies
+
+🛠 Tech Stack & Expertise
+
+Frontend: React, Vite, TypeScript, TailwindCSS, Lucide-React
+Backend: FastAPI, Django, Node.js, Express
+Database: MongoDB, PostgreSQL
+Machine Learning: scikit-learn, TensorFlow, PyTorch
+Other Tools: Git, GitHub, Docker, EmailJS, Figma
+
+Specialties:
+
+Scalable, maintainable code
+
+Modern UI/UX with animations and interactive elements
+
+Full-stack architecture design
+
+API design and integration
+
+Automation & ML integration
+
+📂 Project Structure
+portfolio/
+├─ public/           # Public assets (resume, images)
+├─ src/
+│  ├─ assets/        # Backgrounds, icons, images
+│  ├─ components/    # Reusable components (Hero, Contact, Cards)
+│  ├─ pages/         # Page components (Home, Projects)
+│  ├─ App.tsx        # Main app component
+│  └─ main.tsx       # Entry point
+├─ package.json       # Dependencies
+└─ README.md          # Project documentation
+
+💻 Setup & Development
+
+Clone the repository
+
+git clone https://github.com/MIM-II-K/portfolio.git
+cd portfolio
+
+
+Install dependencies
+
+npm install
+# or
+yarn
+
+
+Run the development server
+
 npm run dev
-```
+# or
+yarn dev
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Open http://localhost:5173
+ in your browser.
 
-**Use GitHub Codespaces**
+📬 Contact Form Setup (EmailJS)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Sign up for EmailJS
+.
 
-## What technologies are used for this project?
+Create a Service, Template, and obtain your Public Key.
 
-This project is built with:
+Update Contact.tsx:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+const SERVICE_ID = "your_service_id";
+const TEMPLATE_ID = "your_template_id";
+const PUBLIC_KEY = "your_public_key";
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/da95f563-f17f-49fa-8ca4-47c6e13c4a30) and click on Share -> Publish.
+Ensure template variables match form fields (from_name, reply_to, subject, message).
 
-## Can I connect a custom domain to my Lovable project?
+📄 Resume
 
-Yes, you can!
+Place your resume in public/resume.pdf.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The Download Resume button in Hero allows one-click download.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+🌐 Deployment
+
+Recommended platforms:
+
+Vercel: vercel --prod
+
+Netlify: drag-and-drop or CLI deployment
+
+Ensure /public/resume.pdf is included in the build.
+
+⚡ Customization
+
+Update Hero Section text, tech stack, and background in Hero.tsx
+
+Update Projects Section with your own portfolio projects
+
+Update Social Links and contact details in Hero.tsx
+
+🏆 License
+
+MIT License © 2025 MIMIIK
