@@ -62,23 +62,6 @@ const Projects = () => {
       ],
     },
     {
-      title: "BWES",
-      description:
-        "Better World Employment Services' new job portal connects employers and job seekers through a secure, user-friendly platform. This Node.js application features authentication, searchable job listings, company dashboards for managing postings, and application tracking—all designed to promote equal employment opportunities and broaden access to the job market.",
-      images: ["images/projects/bwes.png"],
-      tech: ["JavaScript", "React", "ExpressJs", "NodeJs", "MongoDB"],
-      category: "Job Portal / Web Platform",
-      status: "Production Ready",
-      demoUrl: "https://BWES.vercel.app",
-      githubUrl: "https://github.com/MIMIIKK/BWES.git",
-      features: [
-        "User authentication and profile management",
-        "Searchable job listings with filters",
-        "Company dashboards for managing job postings",
-        "Application tracking for job seekers",
-      ],
-    },
-    {
       title: "Tourism Recommendation Chatbot",
       description:
         "Tourism Recommendation Chatbot, an AI-powered chatbot that suggests sustainable travel destinations using hybrid recommendation algorithms and natural language processing.",
