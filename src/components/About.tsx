@@ -12,7 +12,7 @@ const About = () => {
 
   const downloadResume = useCallback(() => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf";
+    link.href = "/MIMIIK-Resume.pdf";
     link.download = "MIMIIK-Resume.pdf";
     link.click();
   }, []);
