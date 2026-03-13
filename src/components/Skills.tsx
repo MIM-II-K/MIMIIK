@@ -8,7 +8,7 @@ const Skills = () => {
       icon: Code2,
       title: "Frontend Development",
       description: "Modern, responsive web applications",
-      skills: ["React", "Vite", "TypeScript", "Tailwind CSS", "Next.js", "HTML5/CSS3"]
+      skills: ["React", "Vite", "TypeScript", "Tailwind CSS", "HTML5/CSS3"]
     },
     {
       icon: Zap,
@@ -26,7 +26,7 @@ const Skills = () => {
       icon: Database,
       title: "Data & DevOps",
       description: "Scalable infrastructure and data processing",
-      skills: ["AWS", "Git", "CI/CD", "Linux", "MongoDB", "Elasticsearch"]
+      skills: ["AWS", "Git", "CI/CD", "Elasticsearch"]
     }
   ];
 
